@@ -10,7 +10,7 @@ var move = false;
 var score = 0;
 var game_ended = false;
 
-const grid_size = 12;
+const grid_size = 24;
 
 function update_score() {
     document.getElementById('score').innerHTML = score;
