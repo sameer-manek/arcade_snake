@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<title>Snake</title>
+
+		<style>
+			.container {
+				width: 960px;
+				margin:  0 auto;
+				text-align: center;
+			}
+
+			.container .grid {
+				display: inline-block;
+				margin: 2rem auto;
+				border: 5px solid black
+			}
+
+			.container .grid .row {
+				display: flex;
+			}
+
+			.container .grid .cell {
+				background-color: transparent;
+				display: inline-block;
+				height: 1rem;
+				width: 1rem;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container">
+			<div class="hud">
+				Score: <span id="score"></span>
+			</div>
+
+			<div class="grid" id="grid"></div>
+
+			<div id="message">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3DkWeM7Mm8539q5PSg1-orNoaAOPNEO-mfBoPf9QCddCNpgBQSkfW9e51UxPSNgtMMLo&usqp=CAU" alt="">
+				<br>
+				<b>Use arrow keys to move</b>
+			</div>
+
+			
+		</div>
+		
+		<script>
+			// utils
+			function random(min, max) {
+				return Math.floor(Math.random() * (max - min) + min);
+			}
+
+			function toggle_cell (pos, color) {
+				let row = document.getElementById('grid').children[pos[0]];
+				let cell = row.children[pos[1]];
+				cell.style.backgroundColor = color;
+			}
+
+			function add_matx(m1, m2) {
+				if (m1.length === m2.length) {
+					for(let i = 0; i < m1.length; i++) {
+						m1[i] += m2[i];
+					}
+				}
+
+				return m1;
+			}
+
+			function compare_matx(m1, m2) {
+				let flag = true
+				if (m1.length === m2.length) {
+					for(let i = 0; i < m1.length; i++) {
+						if (m1[i] != m2[i]) {
+							flag = false;
+							break;
+						}
+					}
+				}
+				else {
+					flag = false;
+				}
+
+				return flag;
+			}
+		</script>
+		<script src="./script.js"></script>
+	</body>
+</html>																																		
