@@ -3,6 +3,17 @@
 		<title>Snake</title>
 
 		<style>
+			* {
+                margin: 0;
+                padding: 0;
+                font-family: monospace;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+            body, html {
+                background-color: #002C2B;
+                color: white;
+            }
 			.container {
 				width: 960px;
 				margin:  2rem auto;
@@ -34,13 +45,14 @@
 
 		<div class="container">
 			<div class="hud">
+				<h1>Snake</h1>
 				Score: <span id="score"></span>
 			</div>
 
 			<div class="grid" id="grid"></div>
 
 			<div id="message">
-				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3DkWeM7Mm8539q5PSg1-orNoaAOPNEO-mfBoPf9QCddCNpgBQSkfW9e51UxPSNgtMMLo&usqp=CAU" alt="">
+				<img src="./keys.png" alt="" height="100px">
 				<br>
 				<b>Use arrow keys to move</b>
 			</div>
